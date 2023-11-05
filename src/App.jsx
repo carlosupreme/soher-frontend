@@ -7,9 +7,11 @@ import axios from "axios";
 function App() {
   const [works, setWorks] = useState([]);
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/works").then((res) => {
-      setWorks(res.data.data);
-    });
+    axios
+      .get("https://soher-production.up.railway.app/api/works")
+      .then((res) => {
+        setWorks(res.data.data);
+      });
   }, []);
 
   return (
